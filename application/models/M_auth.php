@@ -9,10 +9,10 @@ class M_auth extends CI_Model
 	{
 		parent::__construct();
 		
-		$this->table = 'm_users';
+		$this->table = 'users';
     }
     
-    public function cek_user($data) 
+    public function read_by_where($data) 
     {
         return $this->db->get_where($this->table, $data);
     }

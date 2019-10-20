@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
-			<span>Copyright &copy; PT Taekwang Indonesia 2019</span>
+			<span>Copyright &copy; CPR Vision 2019</span>
 		</div>
 	</div>
 </footer>

@@ -1,16 +1,25 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_user extends CI_Model
+class M_report extends CI_Model
 {
-    protected $table = 'm_users';
-    protected $column_order = array(null, 'username', 'no_tlp', null,null);
-    protected $column_search = array('id', 'username');
-    protected $order = array('id' => 'asc');
+    protected $table = 't_submission';
+    protected $column_order = array(null, 'created_at','m_product.name', 'quantity','users.pin');
+    protected $column_search = array('m_product.name','users.pin');
+    protected $order = array('t_submission.id' => 'asc');
     
     private function _get_datatables_query()
     {
+        if ($this->input->post('from_date')) {
+            $this->db->where('created_at >=', $this->input->post('from_date'));
+        }
+        if ($this->input->post('to_date')) {
+            $this->db->where('created_at <=', $this->input->post('to_date'));
+        }
         $this->db->from($this->table);
+        $this->db->join('m_product', $this->table.'.product_id = m_product.id', 'left');
+        $this->db->join('users', $this->table.'.user_id = users.id', 'left');
+        
         $i = 0;
         
         if (isset($_POST['search'])) {
@@ -61,30 +70,5 @@ class M_user extends CI_Model
     {
         $this->db->from($this->table);
         return $this->db->count_all_results();
-    }
-    
-    public function get_by_id($id)
-    {
-        $this->db->from($this->table);
-        $this->db->where('id', $id);
-        return $this->db->get();
-    }
-    
-    public function save($data)
-    {
-        $this->db->insert($this->table, $data);
-        return $this->db->insert_id();
-    }
-    
-    public function update($where, $data)
-    {
-        $this->db->update($this->table, $data, $where);
-        return $this->db->affected_rows();
-    }
-    
-    public function delete_by_id($id)
-    {
-        $this->db->where('id', $id);
-        $this->db->delete($this->table);
     }
 }

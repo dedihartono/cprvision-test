@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-dark">
 
     <div class="container">
 
@@ -45,21 +45,21 @@
                                     </div>
                                     <form class="user" method="post" action="<?php echo base_url()?>auth/login">
                                         <div class="form-group">
-                                            <input type="pin" name="pin"
-                                                class="form-control form-control-user" placeholder="PIN">
+                                            <input type="password" name="pin"
+                                                class="form-control form-control-user" pattern="[0-9]*" inputmode="numeric" placeholder="PIN">
 										</div>
-										<button style="display:none;" type="submit" class="btn btn-primary btn-user btn-block">
+										<button type="submit" class="btn btn-primary btn-user btn-block">
 											Login
 										</button>
 									</form>
                                 </div>
-								<div class="p-5">
+								<!-- <div class="p-5">
 									<form class="user" method="post" action="<?php echo base_url()?>auth/register">
 										<button type="submit" class="btn btn-primary btn-user btn-block">
 											Generate Your PIN
 										</button>
 									</form>
-								</div>
+								</div> -->
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,23 @@
     <!-- Custom scripts for all pages-->
 	<script src="<?php echo base_url()?>assets/js/sb-admin-2.min.js"></script>
 	
-	<?php echo $this->session->flashdata("pesan"); ?>
+	<?php echo $this->session->flashdata("msg"); ?>
+
+	<script>
+	
+	$(function(){
+		
+		$("input").keydown(function () {
+			$(this).prop('type', 'password');
+		});
+
+		$("input").click(function () {
+			$(this).val('');
+			$(this).prop('type', 'number');
+		});
+	});
+
+	</script>
 </body>
 
 </html>
