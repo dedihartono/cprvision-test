@@ -6,7 +6,7 @@ class M_report extends CI_Model
     protected $table = 't_submission';
     protected $column_order = array(null, 'created_at','m_product.name', 'quantity','users.pin');
     protected $column_search = array('m_product.name','users.pin');
-    protected $order = array('t_submission.id' => 'asc');
+    protected $order = array('t_submission.id' => 'desc');
     
     private function _get_datatables_query()
     {

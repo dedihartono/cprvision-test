@@ -34,6 +34,9 @@
         </div>
 
         <div class="card-body">
+            <div id="colvis"></div>
+        </div>
+        <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="table" width="100%" cellspacing="0">
                     <thead>
@@ -88,5 +91,18 @@ $(document).ready(function() {
         format: 'yyyy-mm-dd',
         todayHighlight: true
     });
+
+    // new $.fn.dataTable.Buttons(table, {
+	// 	dom: 'Bfrtip',
+	// 	buttons: [
+    //         'copy', 'excel', 'pdf'
+    //     ]
+    // });
+
+    // table.buttons().container()
+    //     .appendTo($('.col-sm-6:eq(0)', table.table().container()));
+
+    // let colvis = new $.fn.dataTable.colVis(table);
+    // $('#colvis').html(colvis.button());
 });
 </script>

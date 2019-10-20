@@ -22,6 +22,7 @@
     <link href="<?php echo base_url()?>assets/css/pricing.css" rel="stylesheet">
 	<link href="<?php echo base_url()?>assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 	<link href="<?php echo base_url()?>assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/vendor/datatables/buttons/css/buttons.bootstrap4.min.css" rel="stylesheet">
 	
 </head>
 
@@ -39,6 +40,8 @@
 	<!-- Page level plugins -->
     <script src="<?php echo base_url()?>assets/vendor/datatables/jquery.dataTables.min.js"></script>
 	<script src="<?php echo base_url()?>assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+	<script src="<?php echo base_url()?>assets/vendor/datatables/buttons/js/dataTables.buttons.min.js"></script>
+	<script src="<?php echo base_url()?>assets/vendor/datatables/buttons/js/buttons.colVis.min.js"></script>
 	<script src="<?php echo base_url()?>assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 	
     <!-- Page Wrapper -->
@@ -89,7 +92,6 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="<?php echo base_url('auth/logout')?>">Logout</a>
