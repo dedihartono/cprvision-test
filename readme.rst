@@ -2,7 +2,6 @@
 CPR Vision - Test
 ###################
 
-#Specification:
-1.
-2.
-3.
+Demo : 
+
+PIN : 1234 or 1235
