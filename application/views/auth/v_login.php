@@ -83,21 +83,6 @@
 	
 	<?php echo $this->session->flashdata("msg"); ?>
 
-	<script>
-	
-	$(function(){
-		
-		$("input").keydown(function () {
-			$(this).prop('type', 'password');
-		});
-
-		$("input").click(function () {
-			$(this).val('');
-			$(this).prop('type', 'number');
-		});
-	});
-
-	</script>
 </body>
 
 </html>
